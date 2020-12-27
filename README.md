@@ -20,11 +20,21 @@ SVG filter to create dithering effect for CSS
         <feComposite operator="arithmetic" k1="0" k2="1" k3="1" k4="-0.5" in2="tiled" in="SourceGraphic" result="blend"/>
 
         <feComponentTransfer in="blend">
-            <feFuncR type="discrete" tableValues="0 1" />
-            <feFuncG type="discrete" tableValues="0 1" />
-            <feFuncB type="discrete" tableValues="0 1" />
-            <feFuncA type="discrete" tableValues="0 1" />
+          <feFuncR type="discrete" tableValues="0 1" />
+          <feFuncG type="discrete" tableValues="0 1" />
+          <feFuncB type="discrete" tableValues="0 1" />
+          <feFuncA type="discrete" tableValues="0 1" />
         </feComponentTransfer>
       </filter>
     </svg>
 ```
+
+
+## refering to the filter in CSS ##
+```
+img {
+  filter: url(#dither);
+}
+```
+
+
