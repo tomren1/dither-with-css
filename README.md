@@ -2,7 +2,7 @@
 SVG filter to create dithering effect for CSS
 
 
-## SVG
+## SVG Filter
 ```
 <svg>
   <filter id="dither" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
