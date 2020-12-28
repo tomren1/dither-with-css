@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dithering</title>
+    <style media="screen">
+      .dithered {
+        filter: url(#dither);
+      }
+      .strip {
+        width: 400px;
+        height: 30px;
+      }
+      .gradient {
+        background: linear-gradient(90deg, red, yellow, green, green, cyan, blue, magenta, red);
+      }
+      .gradient-bw {
+        background: linear-gradient(90deg, black, white);
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="strip gradient dithered"></div>
+    <div class="strip gradient-bw dithered"></div>
+
+    <svg>
+      <filter id="dither" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+
+        <feImage width="4px" height="4px" result="pattern" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAASElEQVR42gXBgQAAIAxFwW8QwhBCCCGEIYQQQgghhBBCCEMYwutOkphzYmbsvdG9l9YaEYG7o1or5xxKKay1UGYyxuC9R++dD7yGJkTj6F0HAAAAAElFTkSuQmCC"/>
+
+        <feTile in="pattern" result="tiled"/>
+
+        <feComposite operator="arithmetic" k1="0" k2="1" k3="1" k4="-0.5" in2="tiled" in="SourceGraphic"/>
+
+        <feComponentTransfer>
+          <feFuncR type="discrete" tableValues="0 1"/>
+          <feFuncG type="discrete" tableValues="0 1"/>
+          <feFuncB type="discrete" tableValues="0 1"/>
+          <feFuncA type="discrete" tableValues="0 1"/>
+        </feComponentTransfer>
+      </filter>
+    </svg>
+  </body>
+</html>
