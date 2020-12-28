@@ -1,5 +1,5 @@
 # dithering-with-css
-SVG filter to create dithering effect for CSS
+SVG filter for creating a dithering effect in CSS.
 
 
 ## SVG Filter
