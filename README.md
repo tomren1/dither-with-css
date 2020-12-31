@@ -1,5 +1,9 @@
 # dithering-with-css
-SVG filter for creating a dithering effect in CSS.
+Experiment using SVG filter for creating a dithering effect in CSS.
+
+## Issues
+* **Bilinear(?) filtering, causes the dithering not to work on different resolutions, or when zoomed in.**
+* Transparent areas are processed wrongly.
 
 
 ## SVG Filter
