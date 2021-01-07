@@ -8,13 +8,11 @@ Experiment using SVG filter for creating a dithering effect in CSS.
 
 ## SVG Filter
 ```
-<svg>
+<svg image-rendering="optimizeSpeed">
   <filter id="dither" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
 
     <feImage width="4px" height="4px" result="pattern" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAASElEQVR42gXBgQAAIAxFwW8QwhBCCCGEIYQQQgghhBBCCEMYwutOkphzYmbsvdG9l9YaEYG7o1or5xxKKay1UGYyxuC9R++dD7yGJkTj6F0HAAAAAElFTkSuQmCC"/>
-
     <feTile in="pattern" result="tiled"/>
-
     <feComposite operator="arithmetic" k1="0" k2="1" k3="1" k4="-0.5" in2="tiled" in="SourceGraphic"/>
 
     <feComponentTransfer>
