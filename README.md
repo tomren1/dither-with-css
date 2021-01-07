@@ -2,7 +2,7 @@
 Experiment using SVG filter for creating a dithering effect in CSS.
 
 ## Issues
-* **Bilinear(?) filtering, causes the dithering not to work on different resolutions, or when zoomed in.**
+* **Chrome blurs the textures making the dithering not work properly :-(**
 * Transparent areas are processed wrongly.
 
 
