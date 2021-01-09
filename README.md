@@ -2,7 +2,7 @@
 Experiment in using a SVG filter for creating a dithering effect.
 
 ## Issues
-* **image-rendering="optimizeSpeed" gives crisp nearest neighbour sampling of pixels, but doesn't work in Chrome, making them look terrible when scaled.**
+* **image-rendering="optimizeSpeed" gives crisp nearest neighbour sampling of pixels, but doesn't work in Chrome, looking terrible when scaled.**
 * Transparent areas.
 
 
