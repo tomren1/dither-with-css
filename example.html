@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Dithering</title>
+    <title>Dithering example</title>
     <style media="screen">
       .dithered {
         filter: url(#dither);
@@ -12,23 +12,37 @@
         height: 30px;
       }
       .gradient {
-        background: linear-gradient(90deg, red, yellow, green, green, cyan, blue, magenta, red);
+        background: linear-gradient(90deg, red, yellow, green, cyan, blue, magenta, red);
       }
       .gradient-bw {
         background: linear-gradient(90deg, black, white);
+      }
+      .gradient-a {
+        background: linear-gradient(90deg, black, transparent);
+      }
+      .text {
+        width: 400px;
+        height: 400px;
+        background: conic-gradient(red, yellow, green, cyan, blue, magenta, red);
+        font-size: 120px;
+        color: white;
+        text-shadow: 4px 4px 5px blue, 8px 8px 5px blue;
+        text-align: center;
       }
     </style>
   </head>
   <body>
 
+    <div class="text dithered">Hello</div>
     <div class="strip gradient dithered"></div>
     <div class="strip gradient-bw dithered"></div>
+    <div class="strip gradient-a dithered"></div>
 
     <svg image-rendering="optimizeSpeed">
       <filter id="dither" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
 
         <feImage width="4px" height="4px" result="pattern" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAASElEQVR42gXBgQAAIAxFwW8QwhBCCCGEIYQQQgghhBBCCEMYwutOkphzYmbsvdG9l9YaEYG7o1or5xxKKay1UGYyxuC9R++dD7yGJkTj6F0HAAAAAElFTkSuQmCC"/>
-        <feTile in="pattern" result="tiled"/
+        <feTile in="pattern" result="tiled"/>
         <feComposite operator="arithmetic" k1="0" k2="1" k3="1" k4="-0.5" in2="tiled" in="SourceGraphic"/>
 
         <feComponentTransfer>
