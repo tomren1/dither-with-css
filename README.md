@@ -28,7 +28,7 @@ Experiment in using a SVG filter for creating a dithering effect.
 
 ## CSS
 ```
-img {
+* {
   filter: url(#dither);
 }
 ```
