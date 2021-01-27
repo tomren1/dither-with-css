@@ -19,7 +19,6 @@ Experiment in using a SVG filter for creating a dithering effect.
       <feFuncR type="discrete" tableValues="0 1"/>
       <feFuncG type="discrete" tableValues="0 1"/>
       <feFuncB type="discrete" tableValues="0 1"/>
-      <feFuncA type="discrete" tableValues="0 1"/>
     </feComponentTransfer>
   </filter>
 </svg>
